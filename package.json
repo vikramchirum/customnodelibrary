@@ -1,0 +1,19 @@
+{
+  "name": "gexa.http_client.basic_auth",
+  "version": "1.0.0",
+  "description": "Client for accessing http resources using basic auth",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@neer-bitbucket:7999/gd/gexa.http_client.basic_auth.git"
+  },
+  "author": "Ryan Purcell",
+  "license": "ISC",
+  "devDependencies": {
+    "superagent": "^5.1.0",
+    "superagent-prefix": "0.0.2"
+  }
+}
