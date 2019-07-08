@@ -154,4 +154,7 @@ const create_request_logger = function (callback) {
     }
 };
 
-module.exports = http_client;
+module.exports = {
+    http_client: http_client,
+    http_status_error: http_status_error
+};
