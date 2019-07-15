@@ -26,6 +26,12 @@ class http_client {
         }
     }
 
+    /**
+     * Performs a get request on the specified endpoint
+     * @param {string} endpoint
+     * @param {boolean} [binary] - if true sets responseType to blob
+     * @returns {Promise<*|null|http_status_error|undefined>}
+     */
     async get(endpoint, binary = false) {
         try {
             let req = request
@@ -109,7 +115,13 @@ class http_client {
 const clean_response = function (result) {
     if (result && result.status && result.status >= 200 && result.status < 300) {
         if (result.body) {
-            return result.body;
+            if (Buffer.isBuffer(result.body)){
+                const filename = result.res.headers['content-disposition'].replace('inline; filename=', '');
+                return {bytes: result.body, filename: filename};
+            }
+            else {
+                return result.body;
+            }
         }
         else {
             return null;
