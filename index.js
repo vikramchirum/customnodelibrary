@@ -51,6 +51,12 @@ class http_client {
         }
     }
 
+    /**
+     * Performs a get request that supports query string params
+     * @param {string} endpoint
+     * @param {object} [query] - object with key/values that represent the query string
+     * @returns {Promise<{filename, bytes}|*|null|http_status_error|undefined>}
+     */
     async search(endpoint, query) {
         try {
             let response = await request
@@ -66,6 +72,12 @@ class http_client {
         }
     }
 
+    /**
+     * Performs a put request at the specified endpoint
+     * @param {string} endpoint
+     * @param {object} body
+     * @returns {Promise<{filename, bytes}|*|null|http_status_error|undefined>}
+     */
     async put(endpoint, body) {
         try {
             let response = await request
@@ -81,6 +93,12 @@ class http_client {
         }
     }
 
+    /**
+     * Performs a post request at the specified endpoint
+     * @param {string} endpoint
+     * @param {object} body
+     * @returns {Promise<{filename, bytes}|*|null|http_status_error|undefined>}
+     */
     async post(endpoint, body) {
         try {
             let response = await request
@@ -96,6 +114,12 @@ class http_client {
         }
     }
 
+    /**
+     * Performs a delete request at the specified endpoint
+     * @param {string} endpoint
+     * @param {object} [query] - object with key/values that represent the query string
+     * @returns {Promise<{filename, bytes}|*|null|http_status_error|undefined>}
+     */
     async delete(endpoint, query) {
         try {
             let response = await request
