@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.1.2"></a>
+## [1.1.2](http://neer-bitbucket:7999/gd/gexa.http_client.basic_auth/compare/v1.1.1...v1.1.2) (2019-07-24)
+
+
+### Bug Fixes
+
+* **cleaned_response:** Fixed issue where 0 or false response body would return undesired responses ([0a5ff81](http://neer-bitbucket:7999/gd/gexa.http_client.basic_auth/commits/0a5ff81))
+
+
+
 <a name="1.1.1"></a>
 ## [1.1.1](http://neer-bitbucket:7999/gd/gexa.http_client.basic_auth/compare/v1.1.0...v1.1.1) (2019-07-18)
 
