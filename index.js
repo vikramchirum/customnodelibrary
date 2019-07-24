@@ -19,8 +19,8 @@ class http_client {
         if (options.request_callback) {
             this.request_logger = create_request_logger(options.request_callback);
         }
-        else{
-            this.request_logger = function(req){
+        else {
+            this.request_logger = function (req) {
                 return req;
             };
         }
@@ -138,17 +138,12 @@ class http_client {
 
 const clean_response = function (result) {
     if (result && result.status && result.status >= 200 && result.status < 300) {
-        if (result.body) {
-            if (Buffer.isBuffer(result.body)){
-                const filename = result.res.headers['content-disposition'].replace('inline; filename=', '');
-                return {bytes: result.body, filename: filename};
-            }
-            else {
-                return result.body;
-            }
+        if (Buffer.isBuffer(result.body)) {
+            const filename = result.res.headers['content-disposition'].replace('inline; filename=', '');
+            return {bytes: result.body, filename: filename};
         }
         else {
-            return null;
+            return result.body;
         }
     }
     else if (result && result.status) {
